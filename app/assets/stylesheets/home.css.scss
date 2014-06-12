@@ -46,9 +46,7 @@
 }
 
 .featured-section {
-  min-height: 400px;
   padding-top: 30px;
-  background: image-url("decor/poker.jpg") no-repeat center top;
   position: relative;
   .left-col, .right-col {
     width: 300px;
@@ -64,7 +62,7 @@
     width: 258px;
     height: 52px;
     background: image-url("decor/join-now.png") no-repeat;
-    top: 395px;
+    bottom: -80px;
     left: 50%;
     margin-left: -129px;
   }
@@ -72,7 +70,7 @@
     position: absolute;
     width: 300px;
     height: 50px;
-    top: 280px;
+    top: 180px;
     left: 50%;
     margin-left: -150px;
     img {
@@ -98,8 +96,8 @@
     .item {
       position: relative;
       float: left;
-      width: 25%;
-      height: 184px;
+      width: 20%;
+      height: 144px;
       padding: 0 10px;
       box-sizing:border-box;
       -moz-box-sizing:border-box; /* Firefox 28 and earlier*/
