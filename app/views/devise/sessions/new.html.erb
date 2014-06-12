@@ -1,0 +1,43 @@
+<div id="page" class="session-page two-col">
+  <div class="container">
+
+    <div class="aside">
+      <h3>PROMOTION</h3>
+      <ul>
+        <li>★ 30% Welcome Bonus</li>
+        <li>★ Unlimited instant cash rebate 0.6%</li>
+        <li>★ Become MYR288 weekly 88 lucky pick winner!!</li>
+        <li>★ 100% welcome bonus up to MYR500</li>
+        <li>★ New registered members up to MYR188810%</li>
+        <li>★ Loyalty Bonus, No Limit within 30days!</li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="offset">
+        <h2>Sign in</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div id="error_explanation">
+            <ul><li><%= alert %></li></ul>
+          </div>
+
+          <div class="form-group textbox"><%= f.label :username %><br />
+          <%= f.text_field :username, autofocus: true %></div>
+
+          <div class="form-group textbox"><%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off" %></div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="form-group checkbox"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+          <% end -%>
+
+          <div class="form-group"><%= f.submit "Sign in", class: "gold-btn" %></div>
+        <% end %>
+        <div class="clearfix"></div>
+        <%= render "devise/shared/links" %>
+
+      </div>
+    </div><!-- /section -->
+    <div class="clearfix"></div>
+
+  </div>
+</div>

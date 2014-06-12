@@ -1,0 +1,66 @@
+<div id="header">
+  <!--
+  <% if params["status"] == "success" %>
+    <div id="notifi-wrapper">
+      <div class="container">
+        <div class="notifi-box">
+          <%= image_tag "success.png", alt: "", style: "height: 16px;padding: 10px;" %>
+          <p>Your payment has been made successfully.</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+-->
+
+  <div class="container">
+    <a href="/" id="logo-link"><%= image_tag "logo.png", alt: "" %></a>
+    <div id="session-bar">
+      <% unless user_signed_in? %>
+        <div class="left-col"><span class="date-timer"></span></div>
+      <% else %>
+        <div class="left-col">
+          <span class="welcome-flash">
+            <%= image_tag "128.png", alt: "", class: "brand" %>
+            <!--
+            <div class="flash-box">
+              <div class="heading">Welcome <%= current_user.email %></div>
+              <div class="body">
+              Your last session started at <%= (current_user.last_sign_in_at).strftime("%Y-%m-%dT%H:%M:%S%z'") %> </div>
+              <div class="footer"><span class="close">Close X</span></div>
+            </div>-->
+          </span>
+          <span class="user-stat">Welcome!</span>
+          <span class="user-stat"><%= current_user.amount %> MYR</span>
+          <span class="user-stat">0 Pt</span>
+        </div>
+      <% end %>
+      <div id="session-corner" class="right-col">
+        <% unless user_signed_in? %>
+          <div class="status-row">Need an account? <%= link_to "Register now!", new_user_registration_path, class: "register-link" %></div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= f.text_field :username, placeholder: "Email", class: "textbox" %>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "textbox" %>
+            <%= f.submit "LOGIN", class: "login-btn" %>
+          <% end %>
+        <% else %>
+          <div class="status-row"><%= link_to "My Account", edit_user_registration_path %><%= link_to "Logout", destroy_user_session_path, method: :delete %></div>
+          <%= link_to "Withdraw", '/withdraws/new', class: "login-btn" %>
+          <%= link_to "Deposit", payment_deposits_path, class: "login-btn" %>
+          <a href="/payment/new" class="visa-link"><%= image_tag "visa.png" %></a>
+        <% end %>
+      </div>
+      <div class="clearfix"></div>
+    </div><!-- /session-bar -->
+
+    <div id="primary-nav">
+      <div class="left-col">
+        <%= link_to "HOME", root_path %><%= link_to "SPORTSBOOK", infos_sportsbook_path %><%= link_to "CASINO", infos_casino_path %>
+      </div>
+      <div class="right-col">
+        <%= link_to "4D", infos_4d_path %><%= link_to "BANKING", infos_banking_path %><%= link_to "CONTACT", infos_contact_path %>
+      </div>
+      <div class="clearfix"></div>
+    </div><!-- /primary-nav -->
+
+  </div><!-- /container -->
+</div><!-- /header -->

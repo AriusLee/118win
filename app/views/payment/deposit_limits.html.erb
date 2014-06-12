@@ -1,0 +1,52 @@
+<div id="page" class="account-page two-col">
+  <div class="container">
+
+    <%= render partial: "partials/settings" %>
+    <div class="section">
+      <div class="offset" style="padding-bottom: 0px;">
+        <h2>Deposit Limits</h2>
+        <p>Please choose your deposit limits.</p>
+        <div class="left-col">
+          <h4>Active deposit</h4>
+          <div class="form-group">
+            <label>Daily</label>
+            <span class="field">99999999 MYR</span>
+          </div>
+          <div class="form-group">
+            <label>Weekly</label>
+            <span class="field">99999999 MYR</span>
+          </div>
+          <div class="form-group">
+            <label>Monthly</label>
+            <span class="field">99999999 MYR</span>
+          </div>
+        </div><!-- /left-col -->
+        <div class="right-col">
+          <form>
+            <h4>Request new deposit limits</h4>
+            <div class="form-group textbox">
+              <label>Daily</label>
+              <input type="number" value="99999999"> MYR
+            </div>
+            <div class="form-group textbox">
+              <label>Weekly</label>
+              <input type="number" value="99999999"> MYR
+            </div>
+            <div class="form-group textbox">
+              <label>Monthly</label>
+              <input type="number" value="99999999"> MYR
+            </div>
+            <div class="form-group submit">
+              <label></label>
+              <input type="submit" value="SAVE" class="gold-btn" >
+            </div>
+          </form>
+        </div><!-- /right-col -->
+        <div class="clearfix"></div>
+        <p style="font-size: 11px; font-style:italic;">Please note: to efficiently prevent compulsive gaming, increases of the deposit limit take effect after a waiting period of 24 hours.</p>
+      </div>
+    </div><!-- /section -->
+    <div class="clearfix"></div>
+
+  </div><!-- /container -->
+</div>

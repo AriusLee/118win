@@ -1,0 +1,51 @@
+<div id="page" class="account-page two-col">
+  <div class="container">
+
+    <%= render partial: "partials/settings" %>
+    <div class="section">
+      <div class="offset">
+        <h2>Select a withdrawal method</h2>
+        <div class="methods-holder">
+          <a href="<%= payment_new_path %>">
+            <%= image_tag "payments/1.png" %>
+            <div class="name">Visa</div>
+          </a>
+          <a href="<%= payment_new_path %>">
+            <%= image_tag "payments/2.png" %>
+            <div class="name">MasterCard</div>
+          </a>
+          <a href="<%= payment_new_path %>">
+            <%= image_tag "payments/3.png" %>
+            <div class="name">Maestro</div>
+          </a>
+          <a href="<%= payment_new_path %>">
+            <%= image_tag "payments/4.png" %>
+            <div class="name">EntroPay</div>
+          </a>
+          <a href="<%= payment_new_path %>">
+            <%= image_tag "payments/5.png" %>
+            <div class="name">NETELLER</div>
+          </a>
+          <a href="<%= payment_new_path %>">
+            <%= image_tag "payments/6.png" %>
+            <div class="name">Skrill</div>
+          </a>
+          <a href="<%= payment_new_path %>">
+            <%= image_tag "payments/7.png" %>
+            <div class="name">Ukash</div>
+          </a>
+          <a href="<%= payment_new_path %>">
+            <%= image_tag "payments/8.png" %>
+            <div class="name">PromoCode</div>
+          </a>
+          <a href="<%= payment_new_path %>">
+            <%= image_tag "payments/9.png" %>
+            <div class="name">Instant Banking</div>
+          </a>
+        </div>
+      </div>
+    </div><!-- /section -->
+    <div class="clearfix"></div>
+
+  </div><!-- /container -->
+</div>

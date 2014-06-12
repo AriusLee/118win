@@ -1,0 +1,100 @@
+<div id="page">
+	<div class="container">
+		<% unless user_signed_in? %>
+	  <div class="hero-section">
+			<div class="home-slider">
+				<%= image_tag "home-slides/slide-1.jpg" %>
+				<%= image_tag "home-slides/slide-2.jpg" %>
+				<%= image_tag "home-slides/slide-3.jpg" %>
+				<%= image_tag "home-slides/slide-4.jpg" %>
+			</div>
+
+      <div class="clearfix"></div>
+		</div><!-- /hero-unit -->
+
+		<a href="<%= new_user_registration_path %>" class="steps-bar">
+			<span class="signup">
+			  <%= image_tag "signup.png" %>
+		  </span>
+	  </a>
+    <% else %>
+
+    <div class="stream-section">
+			<a href="<%= infos_stream_path %>" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=400');return false;"><%= image_tag "video-placeholder.jpg", alt: "" %></a>
+	  </div>
+		<% end %>
+
+		<div class="featured-section">
+			<%= link_to "", new_user_registration_path, class: "join-now" %>
+			<div class="play-win"><%= image_tag "decor/play-win.png" %></div>
+      <div class="left-col">
+			  <a href="http://www.ibcbet.com" class="featured-item" target="_blank"><%= image_tag "featured/1.jpg" %></a>
+				<a href="http://www.cmdbet.com" class="featured-item" target="_blank"><%= image_tag "featured/2.jpg" %></a>
+		  </div>
+			<div class="right-col">
+			  <a href="http://www.citibet.com" class="featured-item" target="_blank"><%= image_tag "featured/3.jpg" %></a>
+				<a href="http://www.cm839.com" class="featured-item" target="_blank"><%= image_tag "featured/4.jpg" %></a>
+		  </div>
+			<div class="clearfix"></div>
+
+			<div class="row">
+			  <a href="https://www.sbobet.com/" class="item" target="_blank">
+					<%= image_tag "featured/5.jpg" %>
+					<div class="caption">Sbobet</div>
+				</a>
+				<a href="http://www.1scasino.com/Main.aspx" class="item" target="_blank">
+					<%= image_tag "featured/6.jpg" %>
+					<div class="caption">1s Casino</div>
+				</a>
+				<a href="http://www.winningft.com/Main.aspx?lang=EN-US" class="item" target="_blank">
+					<%= image_tag "featured/7.jpg" %>
+					<div class="caption">WinningFt</div>
+				</a>
+				<a href="http://my.12winasia.com/Home.aspx" class="item" target="_blank">
+					<%= image_tag "featured/8.jpg" %>
+					<div class="caption">12win Casino</div>
+				</a>
+				<div class="clearfix"></div>
+		  </div>
+
+	  </div><!-- /featured-section -->
+
+  </div><!-- /container -->
+</div><!-- /page -->
+
+<div class="video-canvas">
+  <div class="video-overlay"></div>
+  <span class="alignment"></span><iframe src="//www.youtube.com/embed/fB0spy6xsPk" width="980" height="400" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+<!--
+<% if user_signed_in? %>
+  <div class="overlay">
+    <div class="welcome-box">
+      <h2>Welcome <%= current_user.email %></h2>
+      <div class="promotion">
+        <strong>15% WELCOME BONUS</strong>
+        <ol>
+          <li>Promotion applies to all 128win new members maximum bonus up to MYR688 only.</li>
+          <li>Select the BONUS CODE "WBS15" during you submit the 1st deposit form.</li>
+          <li>Players may only have one active bonus in their account at any one time.</li>
+          <li>Welcome Bonus: Your initial deposit plus the bonus is subjected to 10 time(s) turnover in 128win product.</li>
+        </ol>
+      </div>
+      <div class="btn-holder"><a class="gold-btn close">Continue &raquo;</a></div>
+    </div>
+  </div>
+
+  <script>
+    $(".close").on("click", function() {
+      $(".overlay").fadeOut(80);
+    });
+		$('.video-link').on('click', function() {
+      $('.video-canvas').fadeIn(100);
+			$('.video-overlay').click(function() {
+				$('.video-canvas').fadeOut(80);
+			});
+    });
+
+  </script>
+<% end %>
+-->

@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Sidebar starts -->
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li>
+          <a href="/operator/dashboard"><b>Monitor</b></a>
+        </li>
+        <li><a href="/operator/transactions">&nbsp;&nbsp;<span class="glyphicon glyphicon-credit-card"></span>&nbsp; Latest Deposit</a></li>
+        <li><a href="/operator/withdraw">&nbsp;&nbsp;<span class="glyphicon glyphicon-credit-card"></span>&nbsp; Latest Withdrawal</a></li>
+        <li><a href="/operator/fund_transfer">&nbsp;&nbsp;<span class="glyphicon glyphicon-credit-card"></span>&nbsp; Latest Fund Transfer</a></li>
+        <li class="active"><a href="/operator/registers">&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span>&nbsp; Latest Register</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <!--<li><a href="/operator/report"><b>Report</b></a></li>-->
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li>
+          <a href="/operator/member-info"><b>Member Info</b></a>
+        </li>
+        <li><a href="/operator/member-list">&nbsp;&nbsp;<span class="glyphicon glyphicon-th-list"></span>&nbsp; Member List</a></li>
+        <!--<li><a href="/operator/member-log">&nbsp;&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp; Member Log</a></li>-->
+        <!--<li><a href="/operator/admin-password">&nbsp;&nbsp;<span class="glyphicon glyphicon-lock"></span>&nbsp; Admin Password</a></li>-->
+      </ul>
+      <!--
+      <ul class="nav nav-sidebar">
+        <li>
+          <a href="/operator/messages" data-toggle="collapse" data-target="#message-nav"><b>Message</b></a>
+        </li>
+        <li><a href="/operator/user-message">&nbsp;&nbsp;<span class="glyphicon glyphicon-inbox"></span>&nbsp; User Message</a></li>
+        <li><a href="/operator/public-message">&nbsp;&nbsp;<span class="glyphicon glyphicon-bullhorn"></span>&nbsp; Public Message</a></li>
+
+      </ul>
+      -->
+    </div>
+    <!-- Sidebar ends -->
+    <!-- Main Content starts -->
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+      <h2 class="sub-header">Latest Registers</h2>
+      <div class="input-group pull-right">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+        <input type="text" class="form-control" placeholder="Search email or username">
+
+      </div>
+      <br>
+      <br>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Email</th>
+              <th>Updated</th>
+              <th>IP Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%- @users.each_with_index do |u, i| %>
+              <tr>
+                <td><%= i + 1 %></td>
+                <td><%= u.username %></td>
+                <td><%= u.updated_at %></td>
+                <td><%= u.current_sign_in_ip %></td>
+              </tr>
+            <% end %>
+            <%= will_paginate @users %>
+          </tbody>
+        </table>
+      </div>
+    <!-- Main Content ends -->
+
+  </div><!-- /row -->
+</div><!-- /container-fluid -->

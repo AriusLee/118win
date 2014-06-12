@@ -1,0 +1,91 @@
+.bootstrap-page {
+  background-color: #000 !important;
+}
+
+.info-page {
+  padding-top: 15px;
+  background: image-url("decor/purple.jpg") no-repeat center top;
+  h1 {
+    color: #f8c627;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #A08738;
+    padding-bottom: 6px;
+    font-size: 18px;
+    padding-left: 20px;
+  }
+  h2 {
+    margin: 0;
+    padding: 0 0 10px;
+    color: #FFF;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  h3 {
+    color: #f8c627;
+    font-size: 17px;
+    margin: 0 0 10px;
+    font-weight: 400;
+  }
+  p, ol {
+    margin: 0;
+    font-weight: 300;
+    font-size: 13px;
+    color: #FFF;
+    opacity: 0.75;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  table {
+    color: #FFF;
+    width: 100%;
+    margin: 15px 0;
+    text-align: center;
+    th, td {
+      border: 1px solid #666;
+      padding: 8px;
+    }
+    th {
+      font-weight: 300;
+      letter-spacing: 1px;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+    td {
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+  .info-pane {
+    padding: 15px 20px 45px;
+    background: rgba(255,255,255,0.1);
+
+  } //info-pane
+  ul.catalog-list {
+    li {
+      box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.45);
+      margin-bottom: 10px;
+      background: rgba(255,255,255,0.1);
+
+      a {
+        display: block;
+        padding: 15px 20px;
+        .img-holder {
+          width: 30%;
+          vertical-align: middle;
+          img {
+            width: 90%;
+            display: block;
+            box-shadow: 0 1px 6px 0 #000;
+          }
+        } //img-holder
+        .text {
+          width: 70%;
+          vertical-align: middle;
+        } //text
+      }
+    }
+  } //catalog-list
+}

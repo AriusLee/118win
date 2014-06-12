@@ -1,0 +1,145 @@
+<body class="bootstrap-page">
+
+<div id="page" class="two-col no-gold-box">
+  <div class="container">
+
+    <%= render partial: "partials/settings" %>
+    <div class="section">
+      <div class="section-heading">Transaction History</div>
+      <div class="content-pane">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#deposit" data-toggle="tab">Deposit</a></li>
+          <li><a href="#withdrawal" data-toggle="tab">Withdrawal</a></li>
+          <li><a href="#fund" data-toggle="tab">Fund Transfer</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="deposit">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <td>No.</td>
+                    <td>Transaction ID</td>
+                    <td>Deposit To</td>
+                    <td>Amount (MYR)</td>
+                    <td>Date</td>
+                    <td>Status</td>
+                    <td>Remarks</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%- @deposits.each_with_index do |d, i| %>
+                    <tr>
+                      <td><%= i+1 %></td>
+                      <td><%= d.id %></td>
+                      <td><%= d.title %></td>
+                      <td><%= d.amount %></td>
+                      <td><%= d.created_at %></td>
+                      <td><%= d.status %></td>
+                      <td><%= d.remark %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+                <!-- TODO:IF NO TRANSACTION
+                <tfoot>
+                  <tr>
+                    <td colspan="7"><center>No transaction</center></td>
+                  </tr>
+                </tfoot>
+                -->
+              </table>
+            </div><!-- /table-responsive -->
+            <%= will_paginate @deposits %>
+          </div><!-- /deposit -->
+
+          <div class="tab-pane" id="withdrawal">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <td>No.</td>
+                    <td>Transaction ID</td>
+                    <td>Withdraw From</td>
+                    <td>Amount (MYR)</td>
+                    <td>Date</td>
+                    <td>Status</td>
+                    <td>Remarks</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%- @withdrawals.each_with_index do |d, i| %>
+                    <tr>
+                      <td><%= i+1 %></td>
+                      <td><%= d.id %></td>
+                      <td><%= d.title %></td>
+                      <td><%= d.amount %></td>
+                      <td><%= d.created_at %></td>
+                      <td><%= d.status %></td>
+                      <td><%= d.remark %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+                <!-- TODO:IF NO TRANSACTION
+                <tfoot>
+                  <tr>
+                    <td colspan="7"><center>No transaction</center></td>
+                  </tr>
+                </tfoot>
+                -->
+              </table>
+            </div><!-- /table-responsive -->
+            <%= will_paginate @withdrawals %>
+          </div><!-- /withdraw -->
+
+          <div class="tab-pane" id="fund">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <td>No.</td>
+                    <td>Transaction ID</td>
+                    <td>Transfer from</td>
+                    <td>Transfer To</td>
+                    <td>Amount (MYR)</td>
+                    <td>Date</td>
+                    <td>Status</td>
+                    <td>Remarks</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%- @fund_transfers.each_with_index do |d, i| %>
+                    <tr>
+                      <td><%= i+1 %></td>
+                      <td><%= d.id %></td>
+                      <td><%= d.from_fund %></td>
+                      <td><%= d.to_fund %></td>
+                      <td><%= d.amount %></td>
+                      <td><%= d.created_at %></td>
+                      <td><%= d.status %></td>
+                      <td><%= d.status %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+                <!-- TODO:IF NO TRANSACTION
+                <tfoot>
+                  <tr>
+                    <td colspan="7"><center>No transaction</center></td>
+                  </tr>
+                </tfoot>
+                -->
+              </table>
+            </div><!-- /table-responsive -->
+            <%= will_paginate @fund_transfers %>
+          </div><!-- /fund -->
+        </div><!-- /tab-content -->
+      </div><!-- /content-pane -->
+    </div><!-- /section -->
+    <div class="clearfix"></div>
+
+  </div><!-- /container -->
+</div>
+<link rel="stylesheet" type="text/css" href="/bootstrap.css">
+</body>

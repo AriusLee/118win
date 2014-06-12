@@ -1,0 +1,48 @@
+<div id="page" class="session-page two-col">
+  <div class="container">
+
+    <div class="aside">
+      <h3>PROMOTION</h3>
+      <ul>
+        <li>★ 30% Welcome Bonus</li>
+        <li>★ Unlimited instant cash rebate 0.6%</li>
+        <li>★ Become MYR288 weekly 88 lucky pick winner!!</li>
+        <li>★ 100% welcome bonus up to MYR500</li>
+        <li>★ New registered members up to MYR188810%</li>
+        <li>★ Loyalty Bonus, No Limit within 30days!</li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="offset">
+        <h2>Sign up</h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="form-group textbox">
+            <label>Name</label><br>
+            <input type="text">
+          </div>
+
+          <div class="form-group textbox"><%= f.label :email %><span style="color: #f8c627;">*</span><br />
+          <%= f.text_field :username, autofocus: true, required: true%></div>
+
+          <div class="form-group textbox"><%= f.label :password %><span style="color: #f8c627;">*</span><br />
+            <%= f.password_field :password, autocomplete: "off" %></div>
+
+          <div class="form-group textbox"><%= f.label :password_confirmation %><span style="color: #f8c627;">*</span><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+          <div class="form-group textbox">
+            <label>Contact Number</label><br>
+            <%= f.text_field :phone_number, autocomplete: "off", required: true %>
+          </div>
+
+          <div class="form-group"><%= f.submit "Sign up", class: "gold-btn" %></div>
+        <% end %>
+        <div class="clearfix"></div>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div><!-- /section -->
+    <div class="clearfix"></div>
+  </div>
+</div>

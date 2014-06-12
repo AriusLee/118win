@@ -1,0 +1,47 @@
+<div id="page" class="session-page two-col">
+  <div class="container">
+
+    <%= render partial: "partials/settings" %>
+    <div class="section">
+      <div class="offset">
+
+    <h2>Payment</h2>
+
+    <%= form_for Order.new do |f| %>
+      <div class="form-group textbox">
+        <label>Product</label><br>
+        <%= select_tag "Title", "<option>ibcbet</option><option>cmdbet</option><option>citibet</option><option>cm839</option><option>pfk188</option><option>naga99</option>".html_safe %>
+      </div>
+      <div class="form-group textbox">
+        <label>Bank in to</label><br>
+        <%= select("order", "bank_account", BankAccount.all.collect {|p| [ p.title, p.id ] }) %>
+      </div>
+      <div class="form-group textbox">
+        <label>Amount</label><br>
+        <%= f.number_field :amount %>
+      </div>
+      <div class="form-group textbox">
+        <label>Deposit Date Time</label><br>
+        <%= f.text_field :deposit_date_time, value: "2014-05-13 14:20:14" %>
+      </div>
+      <div class="form-group textbox">
+      <label>Deposit Method</label><br>
+        <%= select_tag "deposit_method", "<option>Online Transfer</option><option>Credit Card</option>".html_safe %>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="gold-btn" value="CONFIRM PAYMENT" />
+      </div>
+      <% if params["status"] == "success" %>
+        <div class="form-group">
+          <%= image_tag "success.png", alt: "", style: "height: 16px;padding: 10px;" %>
+          <p style="display: inline-block; vertical-align: middle;">Your payment has been made successfully.</p>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="back-row"><%= link_to "« Back", :back %></div>
+
+</div>
+</div><!-- /section -->
+<div class="clearfix"></div>
+</div>
+</div>

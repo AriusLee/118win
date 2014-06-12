@@ -1,0 +1,39 @@
+<div id="page" class="session-page two-col">
+  <div class="container">
+
+    <div class="aside">
+      <h3>PROMOTION</h3>
+      <ul>
+        <li>★ 30% Welcome Bonus</li>
+        <li>★ Unlimited instant cash rebate 0.6%</li>
+        <li>★ Become MYR288 weekly 88 lucky pick winner!!</li>
+        <li>★ 100% welcome bonus up to MYR500</li>
+        <li>★ New registered members up to MYR188810%</li>
+        <li>★ Loyalty Bonus, No Limit within 30days!</li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="offset">
+        <h2>Change your password</h2>
+
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
+          <%= f.hidden_field :reset_password_token %>
+
+          <div class="form-group textbox"><%= f.label :password, "New password" %><br />
+            <%= f.password_field :password, autofocus: true, autocomplete: "off" %></div>
+
+          <div class="form-group textbox"><%= f.label :password_confirmation, "Confirm new password" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+          <div class="form-group"><%= f.submit "Change my password", class: "gold-btn" %></div>
+        <% end %>
+        <div class="clearfix"></div>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div><!-- /section -->
+
+    <div class="clearfix"></div>
+
+  </div>
+</div>

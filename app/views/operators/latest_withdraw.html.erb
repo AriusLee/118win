@@ -1,0 +1,100 @@
+<div class="container-fluid">
+  <div class="row">
+
+  <!-- Sidebar starts -->
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li>
+          <a href="/operator/dashboard"><b>Monitor</b></a>
+        </li>
+        <li><a href="/operator/transactions">&nbsp;&nbsp;<span class="glyphicon glyphicon-credit-card"></span>&nbsp; Latest Deposit</a></li>
+        <li class="active"><a href="/operator/withdraw">&nbsp;&nbsp;<span class="glyphicon glyphicon-credit-card"></span>&nbsp; Latest Withdrawal</a></li>
+        <li><a href="/operator/fund_transfer">&nbsp;&nbsp;<span class="glyphicon glyphicon-credit-card"></span>&nbsp; Latest Fund Transfer</a></li>
+        <li><a href="/operator/registers">&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span>&nbsp; Latest Register</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <!--<li><a href="/operator/report"><b>Report</b></a></li>-->
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li>
+          <a href="/operator/member-info"><b>Member Info</b></a>
+        </li>
+        <li><a href="/operator/member-list">&nbsp;&nbsp;<span class="glyphicon glyphicon-th-list"></span>&nbsp; Member List</a></li>
+        <!--<li><a href="/operator/member-log">&nbsp;&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp; Member Log</a></li>-->
+        <!--<li><a href="/operator/admin-password">&nbsp;&nbsp;<span class="glyphicon glyphicon-lock"></span>&nbsp; Admin Password</a></li>-->
+      </ul>
+      <!--
+      <ul class="nav nav-sidebar">
+        <li>
+          <a href="/operator/messages" data-toggle="collapse" data-target="#message-nav"><b>Message</b></a>
+        </li>
+        <li><a href="/operator/user-message">&nbsp;&nbsp;<span class="glyphicon glyphicon-inbox"></span>&nbsp; User Message</a></li>
+        <li><a href="/operator/public-message">&nbsp;&nbsp;<span class="glyphicon glyphicon-bullhorn"></span>&nbsp; Public Message</a></li>
+
+      </ul>
+      -->
+    </div>
+    <!-- Sidebar ends -->
+
+
+    <!-- Main Content starts -->
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+      <h2 class="sub-header">Latest Withdrawals</h2>
+      <p>
+        <!--
+        <div class="btn-group btn-group-sm pull-right" data-toggle="buttons">
+          <label class="btn btn-default">
+            <input type="radio" name="options" id="pending"> Pending Only
+          </label>
+          <label class="btn btn-default active">
+            <input type="radio" name="options" id="all" checked="checked"> Show All
+          </label>
+        </div>
+        -->
+        <b>Latest 50 Transactions</b> - <small>Click ID to update transaction</small>
+      </p>
+      <br>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>ID</th>
+              <th>Email Address</th>
+              <th>Types</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Remark</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%- @withdraws.each_with_index do |t, i| %>
+              <tr class="list-group-item-warning">
+                <td><%= (i+1) %></td>
+                <td><a href="/operator/withdraw/<%= t.id %>"><b><%= t.id %></b></a><br><%= t.created_at %></td>
+                <td><%= t.user.username %><br><b>Product:</b> <%= t.title %> </td>
+                <td>WITHDRAWALS</td>
+                <td><%= t.amount %></td>
+                <td><%= t.status %></td>
+                <td></td>
+              </tr>
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr class="list-group-item-success">
+              <td colspan="4"><center>Total Records: <b><%= @withdraws.count %></b></center></td>
+              <td><b><%= @total_amount %></b></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <%= will_paginate @withdraws %>
+    </div>
+    <!-- Main Content ends -->
+
+  </div><!-- /row -->
+</div><!-- /container-fluid -->
+

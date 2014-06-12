@@ -1,0 +1,97 @@
+<body class="bootstrap-page">
+<div id="page" class="two-col no-gold-box">
+  <div class="container">
+
+    <%= render partial: "partials/settings" %>
+    <div class="section">
+      <div class="section-heading">My Profile</div>
+      <div class="content-pane">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
+
+            <div class="table-responsive">
+              <table class="table">
+                <tr>
+                  <td><%= f.label :email %></td>
+                  <td><%= f.text_field :username, disabled: "disabled", class: "form-control" %></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :name %></td>
+                  <td><%= f.text_field :name, class: "form-control" %></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :birthday %></td>
+                  <td>
+                    <%= date_select("user", "birthday", start_year: 1800) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><%= f.label :phone_numer %>*</td>
+                  <td><%= f.text_field :phone_number, class: "form-control" %></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><input type="submit" value="Update" class="btn btn-primary"></td>
+                </tr>
+              </table>
+            </div><!-- table-responsive -->
+
+            <div class="page-header">Banking Info</div>
+            <p style="color: red;text-shadow: none;margin: -10px 0 6px;">Member only allow to update Bank Information for One (1) Time</p>
+            <div class="table-responsive">
+              <table class="table">
+                <tr>
+                  <td><%= f.label :bank_name %> *</td>
+                  <td><%= f.text_field :bank_name, class: "form-control", disabled: (!current_user.bank_name.empty?) %></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :bank_branch %> *</td>
+                  <td><%= f.text_field :bank_branch, class: "form-control", disabled: (!current_user.bank_branch.empty?) %></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :account_holder %> *</td>
+                  <td><%= f.text_field :account_holder, class: "form-control", disabled: (!current_user.account_holder.empty?) %></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :account_no %> *</td>
+                  <td><%= f.text_field :account_no, class: "form-control", disabled: (!current_user.account_no.empty?) %></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><input type="submit" value="Save" class="btn btn-primary"></td>
+                </tr>
+              </table>
+            </div><!-- table-responsive -->
+
+            <div class="page-header">Change Password</div>
+            <div class="table-responsive">
+              <table class="table">
+                <tr>
+                  <td><%= f.label :password %></td>
+                  <td><%= f.password_field :password, autocomplete: "off", class: "form-control" %><div class="instruction">(leave blank if you don't want to change it)</div></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :password_confirmation %></td>
+                  <td><%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :current_password %></td>
+                  <td><%= f.password_field :current_password, autocomplete: "off", class: "form-control" %><div class="instruction">(we need your current password to confirm your changes)</div></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><input type="submit" value="Change Password" class="btn btn-primary"></td>
+                </tr>
+              </table>
+            </div><!-- table-responsive -->
+
+        <% end %>
+        <div class="back-row"><%= link_to "« Back", :back %></div>
+      </div><!-- /content-pane -->
+    </div><!-- /section -->
+    <div class="clearfix"></div>
+
+  </div>
+</div>
+<link rel="stylesheet" type="text/css" href="/bootstrap.css">
+</body>
