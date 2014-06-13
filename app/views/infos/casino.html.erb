@@ -4,42 +4,102 @@
     <h1>casino</h1>
 
     <ul class="catalog-list">
-      <li>
-        <a href="http://my.12winasia.com/Home.aspx" target="_blank">
-          <span class="img-holder"><%= image_tag "samples/casino-1.jpg" %></span><span class="text">
-            <h2>12win Casino</h2>
-            <h3>More than 100 Casino Games for You</h3>
-            <p>12win Casino is Asia's pioneering online casino providing non-stop gaming and entertainment to hundreds of thousand players in the region. For Live Games, they offer Live Baccarat, Live Roulette, Live Blackjack, Live Sic Bo and much more. With over 350 people in its 24/7 operations and support services, customers are guaranteed of a fun and satisfying casino gaming every time they visit 12win Casino.</p>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="http://www.1scasino.com/Main.aspx" target="_blank">
-          <span class="img-holder"><%= image_tag "samples/casino-2.jpg" %></span><span class="text">
-            <h2>1S Casino</h2>
-            <h3>Offering a quality internet casino gaming experience</h3>
-            <p>At 1S CASINO, You now can enjoy the best online casino experience out there when you play casino online. Members can now enjoy the most extensive ranges of visually stunning and interactive Casino games such as Poker, Slot Game, Roulette, Blackjack, Baccarat, Sic Bo, Dragon Tiger, SeDie, FanTan etc</p>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.vwin.com/home.aspx" target="_blank">
-          <span class="img-holder"><%= image_tag "samples/casino-3.jpg" %></span><span class="text">
-            <h2>V Win</h2>
-            <h3>Offering wide range of live casino games</h3>
-            <p>V WIN offering live casino games in live dealer, ultimate, multibet, robot live, robot multibet, slots game, video poker, big game machine, table game, classoc slots and more..</p>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="http://www.asia855.com/asia855/index.jsp" target="_blank">
-          <span class="img-holder"><%= image_tag "samples/casino-4.jpg" %></span><span class="text">
-            <h2>Asia 855</h2>
-            <h3>About Asia 855</h3>
-            <p>Asia855 offering live casino games in Baccarat, Insurance Baccarat, Dragon Tiger, Roulette, Sic-Bo, SeDie, Sic-Bo FanTan and more. Multi view function and games reports is available.</p>
-          </span>
-        </a>
-      </li>
+      <% unless user_signed_in? %>
+        <li>
+          <a href="<%= new_user_session_path %>">
+            <span class="img-holder"><%= image_tag "samples/ibc.png" %></span><span class="text">
+              <h2>ibcbet</h2>
+              <h3>More than 100 Casino Games for You</h3>
+              <p>Firstright Developments Limited (www.frdlimited.com) is a multi-branded Asian-based remote gambling operator focused primarily on offering sports betting products, peer to peer and casino games and services for certain European and Asia Pacific markets through several brands.
+  Firstright Developments Limited operates this website (www.ibcbet.com).</p>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="<%= new_user_session_path %>">
+            <span class="img-holder"><%= image_tag "samples/cmd.png" %></span><span class="text">
+              <h2>cmdbet</h2>
+              <h3>Offering a quality internet casino gaming experience</h3>
+              <p>We are an international bookmaker company, focusing on booking as well as online live betting for various sports and games of any events, including special world events. We have obtained full sports betting license, taking pride in being a legal venture, while providing you with quality degree of entertainment.</p>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="<%= new_user_session_path %>">
+            <span class="img-holder"><%= image_tag "samples/citibet.png" %></span><span class="text">
+              <h2>Citibet</h2>
+              <h3>Offering wide range of live casino games</h3>
+              <p>CITIBET is your window to the world of international horse racing and greyhound racing. Our online assessment and online betting allow you to have an interactive racing experience as you will be involved in the action as it happens. - See more at: http://www.iagencynet.com/horse-greyhound-racing/citibet/#sthash.TcWddaGS.dpuf</p>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="<%= new_user_session_path %>">
+            <span class="img-holder"><%= image_tag "samples/839.png" %></span><span class="text">
+              <h2>cm839</h2>
+              <h3>About Asia 855</h3>
+              <p>欢迎光临澳门世界，亚洲领航在线博彩网站！ 百家乐，轮盘，纸牌，或是在线视频老虎机游戏，澳门世界为您提供了最好的在线游戏体验。</p>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="<%= new_user_session_path %>">
+            <span class="img-holder"><%= image_tag "samples/pkf.png" %></span><span class="text">
+              <h2>pkf188</h2>
+              <h3>About Asia 855</h3>
+              <p>To be the market leader in the Asia Pacific online gaming industry, as measured by number of members and member satisfaction. </p>
+            </span>
+          </a>
+        </li>
+      <% else %>
+        <li>
+          <a href="http://www.ibcbet.com/">
+            <span class="img-holder"><%= image_tag "samples/ibc.png" %></span><span class="text">
+              <h2>ibcbet</h2>
+              <h3>More than 100 Casino Games for You</h3>
+              <p>Firstright Developments Limited (www.frdlimited.com) is a multi-branded Asian-based remote gambling operator focused primarily on offering sports betting products, peer to peer and casino games and services for certain European and Asia Pacific markets through several brands.
+  Firstright Developments Limited operates this website (www.ibcbet.com).</p>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.cmdbet.com/" target="_blank">
+            <span class="img-holder"><%= image_tag "samples/cmd.png" %></span><span class="text">
+              <h2>cmdbet</h2>
+              <h3>Offering a quality internet casino gaming experience</h3>
+              <p>We are an international bookmaker company, focusing on booking as well as online live betting for various sports and games of any events, including special world events. We have obtained full sports betting license, taking pride in being a legal venture, while providing you with quality degree of entertainment.</p>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.citibet.com/?8b081211-0b0c-48c5-a819-5c15bb78915f" target="_blank">
+            <span class="img-holder"><%= image_tag "samples/citibet.png" %></span><span class="text">
+              <h2>Citibet</h2>
+              <h3>Offering wide range of live casino games</h3>
+              <p>CITIBET is your window to the world of international horse racing and greyhound racing. Our online assessment and online betting allow you to have an interactive racing experience as you will be involved in the action as it happens. - See more at: http://www.iagencynet.com/horse-greyhound-racing/citibet/#sthash.TcWddaGS.dpuf</p>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="http://cm839.com/" target="_blank">
+            <span class="img-holder"><%= image_tag "samples/839.png" %></span><span class="text">
+              <h2>cm839</h2>
+              <h3>About Asia 855</h3>
+              <p>欢迎光临澳门世界，亚洲领航在线博彩网站！ 百家乐，轮盘，纸牌，或是在线视频老虎机游戏，澳门世界为您提供了最好的在线游戏体验。</p>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="http://pkf188.com/" target="_blank">
+            <span class="img-holder"><%= image_tag "samples/pkf.png" %></span><span class="text">
+              <h2>pkf188</h2>
+              <h3>About Asia 855</h3>
+              <p>To be the market leader in the Asia Pacific online gaming industry, as measured by number of members and member satisfaction. </p>
+            </span>
+          </a>
+        </li>
+      <% end %>
+
     </ul>
 
   </div><!-- /container -->
