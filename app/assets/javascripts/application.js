@@ -15,6 +15,7 @@
 //= require marquee
 //= require jquery.slides
 //= require jsclock-0.8
+//= require jquery.datetimepicker
 //= require_tree .
 
 $(document).on('ready', function() {

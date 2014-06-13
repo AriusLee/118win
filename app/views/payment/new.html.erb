@@ -22,7 +22,10 @@
       </div>
       <div class="form-group textbox">
         <label>Deposit Date Time</label><br>
-        <%= f.text_field :deposit_date_time, value: "2014-05-13 14:20:14" %>
+        <%= f.text_field :deposit_date_time, value: "2014-05-13 14:20:14", class: "datetimepicker" %>
+        <script>
+          $('.datetimepicker').datetimepicker();
+        </script>
       </div>
       <div class="form-group textbox">
       <label>Deposit Method</label><br>
