@@ -31,26 +31,50 @@
 			<%= link_to "", new_user_registration_path, class: "join-now" %>
 
 			<div class="row">
-			  <a href="http://www.ibcbet.com/" class="item" target="_blank">
-					<%= image_tag "featured/5.jpg" %>
-					<div class="caption">ibcBet</div>
-				</a>
-				<a href="http://www.cmdbet.com/" class="item" target="_blank">
-					<%= image_tag "featured/9.jpg" %>
-					<div class="caption">cmdBet</div>
-				</a>
-				<a href="http://www.citibet.com/?8b081211-0b0c-48c5-a819-5c15bb78915f" class="item" target="_blank">
-					<%= image_tag "featured/6.jpg" %>
-					<div class="caption">Citibet</div>
-				</a>
-				<a href="http://cm839.com/" class="item" target="_blank">
-					<%= image_tag "featured/7.jpg" %>
-					<div class="caption">cm839</div>
-				</a>
-				<a href="http://pkf188.com/" class="item" target="_blank">
-					<%= image_tag "featured/8.jpg" %>
-					<div class="caption">pkf188</div>
-				</a>
+				<% unless user_signed_in? %>
+				  <a href="<%= new_user_session_path %>" class="item">
+							<%= image_tag "featured/5.jpg" %>
+							<div class="caption">ibcBet</div>
+						</a>
+						<a href="<%= new_user_session_path %>" class="item">
+							<%= image_tag "featured/9.jpg" %>
+							<div class="caption">cmdBet</div>
+						</a>
+						<a href="<%= new_user_session_path %>" class="item">
+							<%= image_tag "featured/6.jpg" %>
+							<div class="caption">Citibet</div>
+						</a>
+						<a href="<%= new_user_session_path %>" class="item">
+							<%= image_tag "featured/7.jpg" %>
+							<div class="caption">cm839</div>
+						</a>
+						<a href="<%= new_user_session_path %>" class="item">
+							<%= image_tag "featured/8.jpg" %>
+							<div class="caption">pkf188</div>
+						</a>
+				<% else %>
+				  <a href="http://www.ibcbet.com/" class="item" target="_blank">
+							<%= image_tag "featured/5.jpg" %>
+							<div class="caption">ibcBet</div>
+						</a>
+						<a href="http://www.cmdbet.com/" class="item" target="_blank">
+							<%= image_tag "featured/9.jpg" %>
+							<div class="caption">cmdBet</div>
+						</a>
+						<a href="http://www.citibet.com/?8b081211-0b0c-48c5-a819-5c15bb78915f" class="item" target="_blank">
+							<%= image_tag "featured/6.jpg" %>
+							<div class="caption">Citibet</div>
+						</a>
+						<a href="http://cm839.com/" class="item" target="_blank">
+							<%= image_tag "featured/7.jpg" %>
+							<div class="caption">cm839</div>
+						</a>
+						<a href="http://pkf188.com/" class="item" target="_blank">
+							<%= image_tag "featured/8.jpg" %>
+							<div class="caption">pkf188</div>
+						</a>
+				<% end %>
+
 				<div class="clearfix"></div>
 		  </div>
 
